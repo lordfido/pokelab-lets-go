@@ -1,0 +1,11 @@
+{
+  "name": "pokelab-lets-go",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Sergio Morchón Poveda",
+  "license": "ISC"
+}
