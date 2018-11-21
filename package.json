@@ -1,11 +1,16 @@
 {
   "name": "pokelab-lets-go",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "author": "Sergio Morchón Poveda",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SergioMorchon/pokelab-lets-go"
+  },
   "license": "ISC"
 }
