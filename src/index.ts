@@ -1,3 +1,5 @@
-import * as Stats from "./data/stats";
+import * as Pokedex from "./pokedex";
+import * as Types from "./types";
+import * as Stats from "./stats";
 
-export { Stats };
+export { Pokedex, Types, Stats };
