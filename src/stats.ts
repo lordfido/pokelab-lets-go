@@ -6,6 +6,7 @@ export const Defense = 2;
 export const Speed = 3;
 export const SpecialAttack = 4;
 export const SpecialDefense = 5;
+
 export type Stat =
   | typeof HP
   | typeof Attack
@@ -13,6 +14,15 @@ export type Stat =
   | typeof Speed
   | typeof SpecialAttack
   | typeof SpecialDefense;
+
+export const All: Stat[] = [
+  HP,
+  Attack,
+  Defense,
+  Speed,
+  SpecialAttack,
+  SpecialDefense
+];
 
 const effort = 0;
 

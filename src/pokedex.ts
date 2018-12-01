@@ -7,7 +7,7 @@ export interface PokemonSheet {
   readonly baseStats: ReadonlyArray<number>;
 }
 
-export const all: ReadonlyArray<PokemonSheet> = [
+export const All: ReadonlyArray<PokemonSheet> = [
   {
     nationalNumber: 1,
     name: "Bulbasaur",
