@@ -1,3 +1,5 @@
+import { getValueFromMap } from "./util";
+
 export const Normal = "Normal";
 export const Fire = "Fire";
 export const Water = "Water";
@@ -36,3 +38,58 @@ export type Type =
   | typeof Dark
   | typeof Steel
   | typeof Fairy;
+
+export const All: ReadonlyArray<Type> = [
+  Normal,
+  Fire,
+  Water,
+  Electric,
+  Grass,
+  Ice,
+  Fighting,
+  Poison,
+  Ground,
+  Flying,
+  Psychic,
+  Bug,
+  Rock,
+  Ghost,
+  Dragon,
+  Dark,
+  Steel,
+  Fairy
+];
+
+const typeToEfectivenessIndex: Map<Type, number> = All.reduce(
+  (map, type, index) => {
+    map.set(type, index);
+    return map;
+  },
+  new Map()
+);
+
+const getTypeToEfectivenessIndex = (type: Type) =>
+  getValueFromMap(typeToEfectivenessIndex, type, "type effectiveness");
+
+const efectiveness = [
+  [1, 1, 1, 1, 1, 0.5, 1, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [2, 1, 0.5, 0.5, 1, 2, 0.5, 0, 2, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5],
+  [1, 2, 1, 1, 1, 0.5, 2, 1, 0.5, 1, 1, 2, 0.5, 1, 1, 1, 1, 1],
+  [1, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 0, 1, 1, 2, 1, 1, 1, 1, 1, 2],
+  [1, 1, 0, 2, 1, 2, 0.5, 1, 2, 2, 1, 0.5, 2, 1, 1, 1, 1, 1],
+  [1, 0.5, 2, 1, 0.5, 1, 2, 1, 0.5, 2, 1, 1, 1, 1, 2, 1, 1, 1],
+  [1, 0.5, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 0.5, 1, 2, 1, 2, 1, 1, 2, 0.5],
+  [0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 0.5, 1],
+  [1, 1, 1, 1, 1, 2, 1, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 2, 1, 1, 2],
+  [1, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5, 0.5, 2, 1, 1, 2, 0.5, 1, 1],
+  [1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 0.5, 1, 1],
+  [1, 1, 0.5, 0.5, 2, 2, 0.5, 1, 0.5, 0.5, 2, 0.5, 1, 1, 1, 0.5, 1, 1],
+  [1, 1, 2, 1, 0, 1, 1, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 0.5, 1, 1],
+  [1, 2, 1, 2, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0.5, 1, 1, 0, 1],
+  [1, 1, 2, 1, 2, 1, 1, 1, 0.5, 0.5, 0.5, 2, 1, 1, 0.5, 2, 1, 1]
+];
+
+export const getEffectiveness = (attackingType: Type, defendingType: Type) =>
+  efectiveness[getTypeToEfectivenessIndex(attackingType)][
+    getTypeToEfectivenessIndex(defendingType)
+  ];

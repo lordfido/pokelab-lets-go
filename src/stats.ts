@@ -15,7 +15,7 @@ export type Stat =
   | typeof SpecialAttack
   | typeof SpecialDefense;
 
-export const All: Stat[] = [
+export const All: ReadonlyArray<Stat> = [
   HP,
   Attack,
   Defense,
