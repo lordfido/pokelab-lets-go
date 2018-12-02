@@ -7,7 +7,7 @@ Pokémon data & utilities to build tools.
 ```javascript
 const { Pokedex, Types } = require("pokelab-lets-go");
 
-const electricPokemon = Pokedex.all.filter(({ types }) =>
-  types.contains(Types.Electric)
+const electricPokemon = Pokedex.All.filter(({ types }) =>
+  types.includes(Types.Electric)
 );
 ```
