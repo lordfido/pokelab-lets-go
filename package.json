@@ -2,12 +2,12 @@
   "name": "pokelab-lets-go",
   "version": "0.0.6",
   "description": "",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "test": "jest",
-    "prepublish": "npm run test && rimraf dist && npm run build"
+    "prepublish": "npm run test && npm run build"
   },
   "author": "Sergio Morchón Poveda",
   "repository": {
