@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "es6",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "declarationMap": true
   },
   "include": ["./src"],
   "exclude": ["**/*.test.ts"]

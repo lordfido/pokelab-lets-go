@@ -1,3 +1,5 @@
 src
 jest.config.js
-tsconfig.json
+.travis.yml
+tsconfig*.json
+pokelab-lets-go-*.tgz
