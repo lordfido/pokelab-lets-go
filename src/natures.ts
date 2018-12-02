@@ -109,7 +109,7 @@ const statIndex = {
 };
 
 /**
- * [increases,decreases] = [x,y]
+ * [increases,decreases]
  */
 const statEffects: Nature[][] = [
   [Hardy, Lonely, Adamant, Naughty, Brave],

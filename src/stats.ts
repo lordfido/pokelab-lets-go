@@ -24,28 +24,41 @@ export const All: ReadonlyArray<Stat> = [
   SpecialDefense
 ];
 
-const effort = 0;
+const ev = 0;
 
-export const getStat = (
-  stat: Stat,
-  pokemon: PokemonSheet,
-  level: number,
-  iv: number,
-  nature: number,
-  av: number
-) => {
-  if (stat === HP) {
-    return (
+const getHappinessBoost = (happiness: number) =>
+  Math.min(1.1, 1 + Math.floor(happiness / 255) * 0.1);
+
+type GetStatOptions = {
+  baseStat: number;
+  level: number;
+  iv: number;
+  av: number;
+} & (
+  | {
+      stat: typeof HP;
+    }
+  | {
+      stat: Exclude<Stat, typeof HP>;
+      happiness: number;
+      nature: number;
+    });
+
+export const getStat = (options: GetStatOptions) => {
+  let result = 0;
+  if (options.stat === HP) {
+    result =
+      ((options.iv + 2 * options.baseStat + ev / 4) * options.level) / 100 +
       10 +
-      (level / 100) * (pokemon.baseStats[stat] * 2 + iv) +
-      effort +
-      level +
-      av
-    );
+      options.level;
+  } else {
+    const happinessBoost = getHappinessBoost(options.happiness);
+    result =
+      (((options.iv + 2 * options.baseStat + ev / 4) * options.level) / 100 +
+        5) *
+      options.nature *
+      happinessBoost;
   }
 
-  return (
-    (5 + (level / 100) * (pokemon.baseStats[stat] * 2 + iv) + effort) * nature +
-    av
-  );
+  return Math.floor(result) + options.av;
 };
