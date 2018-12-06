@@ -7,6 +7,7 @@ export interface PokemonSheet {
   readonly types: ReadonlyArray<Type>;
   readonly baseStats: ReadonlyArray<number>;
   readonly megaEvolvedWith?: MegaStone;
+  readonly isAlolan?: true;
 }
 
 export const All: ReadonlyArray<PokemonSheet> = [
@@ -162,27 +163,29 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 19,
-    name: "Alolan Rattata",
-    types: ["Normal", "Dark"],
-    baseStats: [30, 56, 35, 72, 25, 35]
-  },
-  {
-    nationalNumber: 19,
     name: "Rattata",
     types: ["Normal"],
     baseStats: [30, 56, 35, 72, 25, 35]
   },
   {
-    nationalNumber: 20,
-    name: "Alolan Raticate",
+    nationalNumber: 19,
+    name: "Rattata",
     types: ["Normal", "Dark"],
-    baseStats: [75, 71, 70, 77, 40, 80]
+    baseStats: [30, 56, 35, 72, 25, 35],
+    isAlolan: true
   },
   {
     nationalNumber: 20,
     name: "Raticate",
     types: ["Normal"],
     baseStats: [55, 81, 60, 97, 50, 70]
+  },
+  {
+    nationalNumber: 20,
+    name: "Raticate",
+    types: ["Normal", "Dark"],
+    baseStats: [75, 71, 70, 77, 40, 80],
+    isAlolan: true
   },
   {
     nationalNumber: 21,
@@ -222,9 +225,10 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 26,
-    name: "Alolan Raichu",
+    name: "Raichu",
     types: ["Electric", "Psychic"],
-    baseStats: [60, 85, 50, 110, 95, 85]
+    baseStats: [60, 85, 50, 110, 95, 85],
+    isAlolan: true
   },
   {
     nationalNumber: 27,
@@ -234,9 +238,10 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 27,
-    name: "Alolan Sandshrew",
+    name: "Sandshrew",
     types: ["Ice", "Steel"],
-    baseStats: [50, 75, 90, 40, 10, 35]
+    baseStats: [50, 75, 90, 40, 10, 35],
+    isAlolan: true
   },
   {
     nationalNumber: 28,
@@ -246,9 +251,10 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 28,
-    name: "Alolan Sandslash",
+    name: "Sandslash",
     types: ["Ice", "Steel"],
-    baseStats: [75, 100, 120, 65, 25, 65]
+    baseStats: [75, 100, 120, 65, 25, 65],
+    isAlolan: true
   },
   {
     nationalNumber: 29,
@@ -306,21 +312,23 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 37,
-    name: "Alolan Vulpix",
+    name: "Vulpix",
     types: ["Ice"],
-    baseStats: [38, 41, 40, 65, 50, 65]
-  },
-  {
-    nationalNumber: 38,
-    name: "Alolan Ninetales",
-    types: ["Ice", "Fairy"],
-    baseStats: [73, 67, 75, 109, 81, 100]
+    baseStats: [38, 41, 40, 65, 50, 65],
+    isAlolan: true
   },
   {
     nationalNumber: 38,
     name: "Ninetales",
     types: ["Fire"],
     baseStats: [73, 76, 75, 100, 81, 100]
+  },
+  {
+    nationalNumber: 38,
+    name: "Ninetales",
+    types: ["Ice", "Fairy"],
+    baseStats: [73, 67, 75, 109, 81, 100],
+    isAlolan: true
   },
   {
     nationalNumber: 39,
@@ -396,21 +404,23 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 50,
-    name: "Alolan Diglett",
+    name: "Diglett",
     types: ["Ground", "Steel"],
-    baseStats: [10, 55, 30, 90, 35, 45]
-  },
-  {
-    nationalNumber: 51,
-    name: "Alolan Dugtrio",
-    types: ["Ground", "Steel"],
-    baseStats: [35, 100, 60, 110, 50, 70]
+    baseStats: [10, 55, 30, 90, 35, 45],
+    isAlolan: true
   },
   {
     nationalNumber: 51,
     name: "Dugtrio",
     types: ["Ground"],
     baseStats: [35, 100, 50, 120, 50, 70]
+  },
+  {
+    nationalNumber: 51,
+    name: "Dugtrio",
+    types: ["Ground", "Steel"],
+    baseStats: [35, 100, 60, 110, 50, 70],
+    isAlolan: true
   },
   {
     nationalNumber: 52,
@@ -420,21 +430,23 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 52,
-    name: "Alolan Meowth",
+    name: "Meowth",
     types: ["Dark"],
-    baseStats: [40, 35, 35, 90, 50, 40]
-  },
-  {
-    nationalNumber: 53,
-    name: "Alolan Persian",
-    types: ["Dark"],
-    baseStats: [65, 60, 60, 115, 75, 65]
+    baseStats: [40, 35, 35, 90, 50, 40],
+    isAlolan: true
   },
   {
     nationalNumber: 53,
     name: "Persian",
     types: ["Normal"],
     baseStats: [65, 70, 60, 115, 65, 65]
+  },
+  {
+    nationalNumber: 53,
+    name: "Persian",
+    types: ["Dark"],
+    baseStats: [65, 60, 60, 115, 75, 65],
+    isAlolan: true
   },
   {
     nationalNumber: 54,
@@ -571,15 +583,10 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 74,
-    name: "Alolan Geodude",
+    name: "Geodude",
     types: ["Rock", "Electric"],
-    baseStats: [40, 80, 100, 20, 30, 30]
-  },
-  {
-    nationalNumber: 75,
-    name: "Alolan Graveler",
-    types: ["Rock", "Electric"],
-    baseStats: [55, 95, 115, 35, 45, 45]
+    baseStats: [40, 80, 100, 20, 30, 30],
+    isAlolan: true
   },
   {
     nationalNumber: 75,
@@ -588,16 +595,24 @@ export const All: ReadonlyArray<PokemonSheet> = [
     baseStats: [55, 95, 115, 35, 45, 45]
   },
   {
-    nationalNumber: 76,
-    name: "Alolan Golem",
+    nationalNumber: 75,
+    name: "Graveler",
     types: ["Rock", "Electric"],
-    baseStats: [80, 120, 130, 45, 55, 65]
+    baseStats: [55, 95, 115, 35, 45, 45],
+    isAlolan: true
   },
   {
     nationalNumber: 76,
     name: "Golem",
     types: ["Rock", "Ground"],
     baseStats: [80, 120, 130, 45, 55, 65]
+  },
+  {
+    nationalNumber: 76,
+    name: "Golem",
+    types: ["Rock", "Electric"],
+    baseStats: [80, 120, 130, 45, 55, 65],
+    isAlolan: true
   },
   {
     nationalNumber: 77,
@@ -674,27 +689,29 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 88,
-    name: "Alolan Grimer",
-    types: ["Poison", "Dark"],
-    baseStats: [80, 80, 50, 25, 40, 50]
-  },
-  {
-    nationalNumber: 88,
     name: "Grimer",
     types: ["Poison"],
     baseStats: [80, 80, 50, 25, 40, 50]
   },
   {
-    nationalNumber: 89,
-    name: "Alolan Muk",
+    nationalNumber: 88,
+    name: "Grimer",
     types: ["Poison", "Dark"],
-    baseStats: [105, 105, 75, 50, 65, 100]
+    baseStats: [80, 80, 50, 25, 40, 50],
+    isAlolan: true
   },
   {
     nationalNumber: 89,
     name: "Muk",
     types: ["Poison"],
     baseStats: [105, 105, 75, 50, 65, 100]
+  },
+  {
+    nationalNumber: 89,
+    name: "Muk",
+    types: ["Poison", "Dark"],
+    baseStats: [105, 105, 75, 50, 65, 100],
+    isAlolan: true
   },
   {
     nationalNumber: 90,
@@ -783,15 +800,16 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 103,
-    name: "Alolan Exeggutor",
-    types: ["Grass", "Dragon"],
-    baseStats: [95, 105, 85, 45, 125, 75]
+    name: "Exeggutor",
+    types: ["Grass", "Psychic"],
+    baseStats: [95, 95, 85, 55, 125, 75]
   },
   {
     nationalNumber: 103,
     name: "Exeggutor",
-    types: ["Grass", "Psychic"],
-    baseStats: [95, 95, 85, 55, 125, 75]
+    types: ["Grass", "Dragon"],
+    baseStats: [95, 105, 85, 45, 125, 75],
+    isAlolan: true
   },
   {
     nationalNumber: 104,
@@ -801,15 +819,16 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 105,
-    name: "Alolan Marowak",
-    types: ["Fire", "Ghost"],
+    name: "Marowak",
+    types: ["Ground"],
     baseStats: [60, 80, 110, 45, 50, 80]
   },
   {
     nationalNumber: 105,
     name: "Marowak",
-    types: ["Ground"],
-    baseStats: [60, 80, 110, 45, 50, 80]
+    types: ["Fire", "Ghost"],
+    baseStats: [60, 80, 110, 45, 50, 80],
+    isAlolan: true
   },
   {
     nationalNumber: 106,
