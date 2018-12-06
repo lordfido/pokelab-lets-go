@@ -1149,13 +1149,13 @@ export const All: ReadonlyArray<PokemonSheet> = [
     baseStats: [100, 100, 100, 100, 100, 100]
   },
   {
-    nationalNumber: 891,
+    nationalNumber: 808,
     name: "Meltan",
     types: ["Steel"],
     baseStats: [46, 65, 65, 34, 55, 35]
   },
   {
-    nationalNumber: 892,
+    nationalNumber: 809,
     name: "Melmetal",
     types: ["Steel"],
     baseStats: [135, 143, 143, 34, 80, 65]
