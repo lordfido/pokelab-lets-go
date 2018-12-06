@@ -258,7 +258,7 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 29,
-    name: "NidoranF",
+    name: "Nidoran ♀",
     types: ["Poison"],
     baseStats: [55, 47, 52, 41, 40, 40]
   },
@@ -276,7 +276,7 @@ export const All: ReadonlyArray<PokemonSheet> = [
   },
   {
     nationalNumber: 32,
-    name: "NidoranM",
+    name: "Nidoran ♂",
     types: ["Poison"],
     baseStats: [46, 57, 40, 50, 40, 40]
   },
